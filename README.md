@@ -1,2 +1,0 @@
-# QinZhiYing.github.io
-username
