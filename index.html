@@ -7,15 +7,15 @@
     <style>
         /*最外层容器样式*/
         .wrap {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             margin: 15% auto;
             position: relative;
-            -webkit-animation:identifier 2s infinite linear;
+            /* -webkit-animation:identifier 2s infinite linear;
             -moz-animation:identifier 2s infinite linear;
             -ms-animation:identifier 2s infinite linear;
             -o-animation:identifier 2s infinite linear;
-            animation:identifier 2s infinite linear;
+            animation:identifier 2s infinite linear; */
             transform-style: preserve-3d;
             transform-origin: center;
             /* transform: rotateX(0deg) rotateY(-60deg); */
@@ -23,8 +23,8 @@
  
         /*包裹所有容器样式*/
         .cube {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto;
             transform-style: preserve-3d;
             /* 为了方便观察，将整个魔方进行旋转 */
@@ -34,65 +34,65 @@
  
         .cube div {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             /* opacity: 1s; */
             transition: .4s;
         }
  
         /*定义所有图片样式*/
         .pic {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
         }
  
         .cube .out_front {
-            -webkit-transform: rotateY(0deg) translateZ(150px);
+            -webkit-transform: rotateY(0deg) translateZ(100px);
         }
  
         .cube .out_back {
-            -webkit-transform: translateZ(-150px) rotateY(180deg);
+            -webkit-transform: translateZ(-100px) rotateY(180deg);
         }
  
         .cube .out_left {
-            -webkit-transform: rotateY(-90deg) translateZ(150px);
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
         }
  
         .cube .out_right {
-            -webkit-transform: rotateY(90deg) translateZ(150px);
+            -webkit-transform: rotateY(90deg) translateZ(100px);
         }
  
         .cube .out_top {
-            -webkit-transform: rotateX(90deg) translateZ(150px);
+            -webkit-transform: rotateX(90deg) translateZ(100px);
         }
  
         .cube .out_bottom {
-            -webkit-transform: rotateX(-90deg) translateZ(150px);
+            -webkit-transform: rotateX(-90deg) translateZ(100px);
         }
  
         /*鼠标移入后样式*/
         .cube:hover .out_front {
-            -webkit-transform: rotateY(0deg) translateZ(300px);
+            -webkit-transform: rotateY(0deg) translateZ(200px);
         }
  
         .cube:hover .out_back {
-            -webkit-transform: translateZ(-300px) rotateY(180deg);
+            -webkit-transform: translateZ(-200px) rotateY(180deg);
         }
  
         .cube:hover .out_left {
-            -webkit-transform: rotateY(-90deg) translateZ(300px);
+            -webkit-transform: rotateY(-90deg) translateZ(200px);
         }
  
         .cube:hover .out_right {
-            -webkit-transform: rotateY(90deg) translateZ(300px);
+            -webkit-transform: rotateY(90deg) translateZ(200px);
         }
  
         .cube:hover .out_top {
-            -webkit-transform: rotateX(90deg) translateZ(300px);
+            -webkit-transform: rotateX(90deg) translateZ(200px);
         }
  
         .cube:hover .out_bottom {
-            -webkit-transform: rotateX(-90deg) translateZ(300px);
+            -webkit-transform: rotateX(-90deg) translateZ(200px);
         }
 
         @-webkit-keyframes identifier {
@@ -219,5 +219,14 @@
         </div>
     </div>
 </body>
- 
+<script>
+
+    const wrap = document.getElementsByClassName("wrap")[0];
+    let num = 0;
+    setInterval(() => {
+        wrap.style.transform = `rotateY(${num}deg)`
+        num += 5
+    }, 20)
+
+</script>
 </html>
