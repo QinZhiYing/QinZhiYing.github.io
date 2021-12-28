@@ -27,7 +27,7 @@
             margin: 0 auto;
             transform-style: preserve-3d;
             /* 为了方便观察，将整个魔方进行旋转 */
-            transform: rotateX(20deg) rotateY(-60deg);
+            -webkit-transform: rotateX(20deg) rotateY(-60deg);
         }
  
         .cube div {
@@ -45,61 +45,67 @@
         }
  
         .cube .out_front {
-            transform: rotateY(0deg) translateZ(100px);
+            -webkit-transform: rotateY(0deg) translateZ(100px);
         }
  
         .cube .out_back {
-            transform: translateZ(-100px) rotateY(180deg);
+            -webkit-transform: translateZ(-100px) rotateY(180deg);
         }
  
         .cube .out_left {
-            transform: rotateY(-90deg) translateZ(100px);
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
         }
  
         .cube .out_right {
-            transform: rotateY(90deg) translateZ(100px);
+            -webkit-transform: rotateY(90deg) translateZ(100px);
         }
  
         .cube .out_top {
-            transform: rotateX(90deg) translateZ(100px);
+            -webkit-transform: rotateX(90deg) translateZ(100px);
         }
  
         .cube .out_bottom {
-            transform: rotateX(-90deg) translateZ(100px);
+            -webkit-transform: rotateX(-90deg) translateZ(100px);
         }
  
         /*鼠标移入后样式*/
         .cube:hover .out_front {
-            transform: rotateY(0deg) translateZ(200px);
+            -webkit-transform: rotateY(0deg) translateZ(200px);
         }
  
         .cube:hover .out_back {
-            transform: translateZ(-200px) rotateY(180deg);
+            -webkit-transform: translateZ(-200px) rotateY(180deg);
         }
  
         .cube:hover .out_left {
-            transform: rotateY(-90deg) translateZ(200px);
+            -webkit-transform: rotateY(-90deg) translateZ(200px);
         }
  
         .cube:hover .out_right {
-            transform: rotateY(90deg) translateZ(200px);
+            -webkit-transform: rotateY(90deg) translateZ(200px);
         }
  
         .cube:hover .out_top {
-            transform: rotateX(90deg) translateZ(200px);
+            -webkit-transform: rotateX(90deg) translateZ(200px);
         }
  
         .cube:hover .out_bottom {
-            transform: rotateX(-90deg) translateZ(200px);
+            -webkit-transform: rotateX(-90deg) translateZ(200px);
         }
 
         @keyframes identifier {
             0% {
-                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
             }
 
             100% {
-                transform: rotateY(360deg);
+                -webkit-transform: rotateY(360deg);
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -o-transform: rotateY(360deg);
             }
         }
     </style>
