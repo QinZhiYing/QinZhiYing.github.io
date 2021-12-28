@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
- 
+    
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <style>
         /*最外层容器样式*/
         .wrap {
@@ -10,7 +11,10 @@
             height: 200px;
             margin: 15% auto;
             position: relative;
-            animation:identifier 2s infinite linear;
+            -webkit-animation:identifier 2s infinite linear;
+            -moz-animation:identifier 2s infinite linear;
+            -ms-animation:identifier 2s infinite linear;
+            -o-animation:identifier 2s infinite linear;
             transform-style: preserve-3d;
             transform-origin: center;
             /* transform: rotateX(0deg) rotateY(-60deg); */
