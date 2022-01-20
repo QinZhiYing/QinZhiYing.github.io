@@ -1,232 +1,172 @@
+
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送你最美的烟花</title>
     <style>
-        /*最外层容器样式*/
-        .wrap {
-            width: 200px;
-            height: 200px;
-            margin: 15% auto;
-            position: relative;
-            /* -webkit-animation:identifier 2s infinite linear;
-            -moz-animation:identifier 2s infinite linear;
-            -ms-animation:identifier 2s infinite linear;
-            -o-animation:identifier 2s infinite linear;
-            animation:identifier 2s infinite linear; */
-            transform-style: preserve-3d;
-            transform-origin: center;
-            /* transform: rotateX(0deg) rotateY(-60deg); */
+        * {
+            margin: 0px;
+            padding: 0px;
         }
- 
-        /*包裹所有容器样式*/
-        .cube {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            /* 为了方便观察，将整个魔方进行旋转 */
-            -webkit-transform: rotateX(20deg) rotateY(-60deg);
-            transform: rotateX(20deg) rotateY(-60deg);
-        }
- 
-        .cube div {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            /* opacity: 1s; */
-            transition: .4s;
-        }
- 
-        /*定义所有图片样式*/
-        .pic {
-            width: 200px;
-            height: 200px;
-        }
- 
-        .cube .out_front {
-            -webkit-transform: rotateY(0deg) translateZ(100px);
-        }
- 
-        .cube .out_back {
-            -webkit-transform: translateZ(-100px) rotateY(180deg);
-        }
- 
-        .cube .out_left {
-            -webkit-transform: rotateY(-90deg) translateZ(100px);
-        }
- 
-        .cube .out_right {
-            -webkit-transform: rotateY(90deg) translateZ(100px);
-        }
- 
-        .cube .out_top {
-            -webkit-transform: rotateX(90deg) translateZ(100px);
-        }
- 
-        .cube .out_bottom {
-            -webkit-transform: rotateX(-90deg) translateZ(100px);
-        }
- 
-        /*鼠标移入后样式*/
-        .cube:hover .out_front {
-            -webkit-transform: rotateY(0deg) translateZ(200px);
-        }
- 
-        .cube:hover .out_back {
-            -webkit-transform: translateZ(-200px) rotateY(180deg);
-        }
- 
-        .cube:hover .out_left {
-            -webkit-transform: rotateY(-90deg) translateZ(200px);
-        }
- 
-        .cube:hover .out_right {
-            -webkit-transform: rotateY(90deg) translateZ(200px);
-        }
- 
-        .cube:hover .out_top {
-            -webkit-transform: rotateX(90deg) translateZ(200px);
-        }
- 
-        .cube:hover .out_bottom {
-            -webkit-transform: rotateX(-90deg) translateZ(200px);
-        }
-
-        @-webkit-keyframes identifier {
-            0% {
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-                
-            }
-
-            100% {
-                -webkit-transform: rotateY(360deg);
-                -moz-transform: rotateY(360deg);
-                -ms-transform: rotateY(360deg);
-                -o-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-            }
-        }
-        @-moz-keyframes identifier {
-            0% {
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-                
-            }
-
-            100% {
-                -webkit-transform: rotateY(360deg);
-                -moz-transform: rotateY(360deg);
-                -ms-transform: rotateY(360deg);
-                -o-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-            }
-        }
-        @-ms-keyframes identifier {
-            0% {
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-                
-            }
-
-            100% {
-                -webkit-transform: rotateY(360deg);
-                -moz-transform: rotateY(360deg);
-                -ms-transform: rotateY(360deg);
-                -o-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-            }
-        }
-        @-o-keyframes identifier {
-            0% {
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-                
-            }
-
-            100% {
-                -webkit-transform: rotateY(360deg);
-                -moz-transform: rotateY(360deg);
-                -ms-transform: rotateY(360deg);
-                -o-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-            }
-        }
-        @keyframes identifier {
-            0% {
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotateY(360deg);
-                -moz-transform: rotateY(360deg);
-                -ms-transform: rotateY(360deg);
-                -o-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-            }
+        body {
+            width: 100vw;
+            overflow-x: hidden;
         }
     </style>
 </head>
- 
 <body>
-    <!--外层最大容器-->
-    <div class="wrap">
-        <!--包裹所有元素的容器-->
-        <div class="cube">
-            <!--前面图片 -->
-            <div class="out_front">
-                <img src="./images/1.jpg" class="pic" />
-            </div>
-            <!--后面图片 -->
-            <div class="out_back">
-                <img src="./images/2.jpg" class="pic" />
-            </div>
-            <!--左面图片 -->
-            <div class="out_left">
-                <img src="./images/3.jpg" class="pic" />
-            </div>
-            <!--右面图片 -->
-            <div class="out_right">
-                <img src="./images/4.jpg" class="pic" />
-            </div>
-            <!--上面图片 -->
-            <div class="out_top">
-                <img src="./images/5.jpg" class="pic" />
-            </div>
-            <!--下面图片 -->
-            <div class="out_bottom">
-                <img src="./images/6.jpg" class="pic" />
-            </div>
-        </div>
-    </div>
+
+    <canvas></canvas>
+
+    <script>
+
+
+            let canvas = document.getElementsByTagName("canvas")[0]
+            let ctx = canvas.getContext("2d");
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            // function clearCanvas(){
+            //     ctx.fillStyle = '#ffffff';
+            //     ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // }
+
+            window.addEventListener('resize', resizeCanvas, false);
+            resizeCanvas();
+
+            function randomFireLocation() {
+                let y = window.innerHeight;
+                let x = Math.random() * window.innerWidth;
+
+                return { x, y }
+            }
+
+
+
+            let clear = setInterval(clean, 13 * 1.2);
+            
+            function fireUp() {
+                let fire_location = randomFireLocation()
+                create_fire(fire_location)
+            }
+
+            function create_fire(x, y, color) {
+                let oldColor = ctx.fillStyle;
+                ctx.fillStyle = color ? color :"lime";
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, 2 * Math.PI, false);
+                ctx.fill();
+                ctx.fillStyle = oldColor;
+            }
+
+            function fly() {
+                const curh = Math.floor((Math.random() * 500) + 100);
+                const randomNum = Math.floor((Math.random() * 6) + 3);
+                let yh = window.innerHeight;
+                let x = Math.floor(Math.random() * window.innerWidth);
+                let list = []
+                clearInterval(timer)
+                let rgba = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+                var timer = setInterval(() => {
+
+                    if (yh <= curh) {
+                        clearInterval(timer)
+                        func(x, yh, rgba)
+                        navigator.vibrate(1000);
+                        setTimeout(() => {
+                            navigator.vibrate(0);
+                        }, 300)
+
+                    }
+
+                    yh -= randomNum
+                    
+                    // console.log(yh, x)
+                    
+                    create_fire(x, yh, rgba)
+                }, 13)
+            }
+
+            function func(x, y, rgba) {
+                let list = create_fireWork(x, y)
+                // console.log(list)
+                let timer = null
+                clearInterval(timer)
+                timer = setInterval(() => {
+                    if (list.length <= 0) {
+                        clearInterval(timer);
+                        // max++;
+                        return;
+                    }
+                    let p = list.shift();
+                    p.forEach(n => {
+                        create_fire(n.x, n.y, rgba);
+                        
+                    })
+                }, 13)
+            }
+
+            function clean() {
+                let max = 50000;
+                // let defaultFillStyle = ctx.fillStyle;
+                ctx.fillStyle = '#0002'
+                // ctx.beginPath();
+                ctx.fillRect(-max, -max, 2 * max, 2 * max);
+                // ctx.fillStyle = 'blue';
+            }
+
+            for(let i = 0; i < 20; i++) {
+            fly()
+
+            }
+
+            function create_fireWork(sx, sy) {
+                const MaxR = (Math.random() * 40) + 20; // 最大半径
+                const total = 360;
+                const list = [];
+                const list2 = [];
+
+                step = Math.floor(Math.random() * 5) + 10;
+                for (let i = step; i <= 360; i+= step) {
+                    let angle = 360 / total * i;
+                    let h = angle * Math.PI / 180;
+                    
+                    let x = Math.cos(h).toFixed(4);
+                    let y = Math.sin(h).toFixed(4);
+
+                    list.push({x, y, r: 2})
+                }
+
+                let randomR = list.map(n => Number(Math.random() * 0.4 + 0.8).toFixed(2)).map(n => n ** 3)
+                for (let i = 1; i < MaxR; i++) {
+                    let j = 0;
+                    list2.push(
+                        list.map(item => ({
+                            x: item.x * i * 1.8 + sx,
+                            y: item.y * i * 1.5 + sy+ parseInt(randomR[j++]) * (i ** 1.05),
+                            r: item.r,
+                            color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 90}, ${Math.random() * 10})`
+                        }))
+                    )
+                }
+
+                return list2
+            }
+
+
+            document.onclick = function() {
+                fly()
+            }
+
+            // create_fireWork()
+
+            // fireUp()
+    </script>
 </body>
-<script>
-
-    const wrap = document.getElementsByClassName("wrap")[0];
-    let num = 0;
-    setInterval(() => {
-        wrap.style.transform = `rotateY(${num}deg)`
-        num += 5
-    }, 20)
-
-</script>
 </html>
